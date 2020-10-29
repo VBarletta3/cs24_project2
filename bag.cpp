@@ -39,8 +39,7 @@ void Bag::print_words() {
 }
 void Bag::add(std::string word) {
 for(int i = 0; i < used; i++) {
-    if(container[i].getWord() == word) {
-      container[i].setCount(container[i].getCount() + 1);
+    if(search(word, i) >= 0) {
       break;
     }
     else if(container[i].getWord() != word && i == used-1) {
@@ -51,6 +50,16 @@ for(int i = 0; i < used; i++) {
     } 
   }  
 }
+int Bag::search(std::string word, int index) {
+    if(container[index].getWord() == word) {
+      container[index].setCount(container[index].getCount() + 1);
+      return index;
+    }
+    else {
+      return -1;
+    }
+}
+
 
 
 // Implement any other memeber functions you may have

@@ -53,7 +53,7 @@ public:
   // the below function is used to print the contents of
   // container array (declared at line 40)  in the format <WORD::COUNT>
   void print_words();
-
+  int search(std::string word, int index);
   // ADD NEW MEMBER FUNCTIONS HERE AS NEEDED
 private:
   int used = 1;
