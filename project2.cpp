@@ -69,7 +69,8 @@ int main(int argc, char* argv[])
       if(fin.eof()) {cout << "EOF " << files[i] << endl; break;}
       to_lower(word); // converts words to lower case. After this call, the variable "word"
                       // contains alphabets only in lower case.
-
+      
+      container.add(word);
       // add code here to insert content of variable "word" to
       // the Bag object declared in line 43
 
@@ -77,7 +78,7 @@ int main(int argc, char* argv[])
     }
     fin.close();
   }
-
+  container.print_words();
   // add a single line of code below to print words in the format <WORD::COUNT>
 
   return 0;

@@ -20,11 +20,38 @@ Word::Word(std::string name){
   word = name;
   count = 1;
 }
+int Word::getCount() const{
+  return count;
+}
+void Word::setCount(int counter) {
+  count = counter;
+}
+std::string Word::getWord() const {
+  return word;
+}
+
 
 // Implement the print_words function
-void Bag::print_words() const {
-
+void Bag::print_words() {
+  for(int i = 1; i < used; i++) {
+    cout << container[i].getWord() << "::" << container[i].getCount() << endl;
+  }
 }
+void Bag::add(std::string word) {
+for(int i = 0; i < used; i++) {
+    if(container[i].getWord() == word) {
+      container[i].setCount(container[i].getCount() + 1);
+      break;
+    }
+    else if(container[i].getWord() != word && i == used-1) {
+      Word newWord(word);
+      container[used] = newWord;
+      used++;
+      break;
+    } 
+  }  
+}
+
 
 // Implement any other memeber functions you may have
 // added to the class definitions
